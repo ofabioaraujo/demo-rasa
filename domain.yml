@@ -1,0 +1,52 @@
+version: "3.1"
+
+intents: 
+  - saudar
+  - pedir_pizza
+  - especificar_pizza
+  - informar_endereco
+  - confirmar_pedido
+  - canelar_pedido
+
+entities:
+  - sabor
+  - endereco
+
+slots:
+  endereco:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: endereco
+
+  sabor:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: sabor
+
+responses:
+  utter_saudar:
+    - text: "Olá! Como posso ajudá-lo hoje?"
+  utter_pedir_pizza:
+    - text: "Claro! Que sabor de pizza você gostaria?"
+  utter_especificar_pizza:
+    - text: "Ótimo, uma pizza de {sabor}. Qual é o endereço de entrega?"
+  utter_informar_endereco:
+    - text: "Perfeito, sua pizza será entregue em {endereco}. Você gostaria de confirmar o pedido?"
+  utter_confirmar_pedido:
+    - text: "Pedido confirmado! Sua pizza chegará em breve. Alguma outra coisa?"
+  utter_cancelar_pedido:
+    - text: "Pedido cancelado. Se precisar de mais alguma coisa, estou à disposição!"
+
+actions:
+  - utter_saudar
+  - utter_pedir_pizza
+  - utter_especificar_pizza
+  - utter_informar_endereco
+  - utter_confirmar_pedido
+  - utter_cancelar_pedido
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

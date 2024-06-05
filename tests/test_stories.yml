@@ -1,0 +1,35 @@
+version: "3.1"
+stories:
+- story: Teste saudação e pedido de pizza completo
+  steps:
+  - user: "Olá"
+    intent: saudar
+  - action: utter_saudar
+  - user: "Eu gostaria de pedir uma pizza"
+    intent: pedir_pizza
+  - action: utter_pedir_pizza
+  - user: "Quero uma pizza de calabresa"
+    intent: especificar_pizza
+    entities:
+    - sabor: "calabresa"
+  - action: utter_especificar_calabresa
+  - user: "Entrega na Rua das Flores, 123"
+    intent: informar_endereco
+    entities:
+    - endereco: "Rua das Flores, 123"
+  - action: utter_informar_endereco
+  - user: "Sim, confirme meu pedido"
+    intent: confirmar_pedido
+  - action: utter_confirmar_pedido
+
+- story: Teste cancelamento de pedido
+  steps:
+  - user: "Quero uma pizza de pepperoni"
+    intent: especificar_pizza
+    entities:
+    - sabor: "pepperoni"
+  - action: utter_especificar_pizza
+  - user: "Na verdade, cancele meu pedido"
+    intent: cancelar_pedido
+  - action: utter_cancelar_pedido
+  
