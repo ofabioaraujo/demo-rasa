@@ -6,7 +6,7 @@ intents:
   - especificar_pizza
   - informar_endereco
   - confirmar_pedido
-  - canelar_pedido
+  - cancelar_pedido
 
 entities:
   - sabor
