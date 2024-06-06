@@ -2,7 +2,7 @@ version: "3.1"
 
 rules:
 
-  - rules: Saudar o usuário de volta
+  - rule: Saudar o usuário de volta
     steps:
       - intent: saudar
       - action: utter_saudar
